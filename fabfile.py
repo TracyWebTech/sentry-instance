@@ -1,5 +1,7 @@
 
-from fabric.api import sudo, run, env
+import os
+
+from fabric.api import sudo, run, env, put
 from fabric.contrib.files import exists
 from fabric.decorators import with_settings
 from fabric.context_managers import settings, cd, prefix
@@ -81,3 +83,16 @@ def update():
     upgrade_sentry()
 
     sudo('supervisorctl restart all')
+
+
+def upload_ssl_cert(certificate, key):
+    ssl_dir = '{}/ssl/'.format(REPO_PATH)
+    cert_path = os.path.join(ssl_dir, APP_NAME+'.crt')
+    key_path = os.path.join(ssl_dir, APP_NAME+'.key')
+
+    run('mkdir -p {}'.format(ssl_dir))
+
+    put(certificate, cert_path)
+    put(key, key_path)
+
+    run('chmod 600 {}'.format(key_path))

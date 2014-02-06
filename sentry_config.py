@@ -26,7 +26,9 @@ SENTRY_WEB_PORT = 8000
 
 SENTRY_WEB_OPTIONS = {
     'workers': 3,  # the number of gunicorn workers
-    'worker_class': 'gevent'
+    'worker_class': 'gevent',
+    'certfile': 'ssl/sentry.crt',
+    'keyfile': 'ssl/sentry.key',
 }
 
 SENTRY_ALLOW_REGISTRATION = False
