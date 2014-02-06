@@ -32,6 +32,15 @@ SENTRY_WEB_OPTIONS = {
     'keyfile': 'ssl/sentry.key',
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+SENTRY_CACHE_BACKEND = 'default'
+
 SENTRY_ALLOW_REGISTRATION = False
 
 SOCIAL_AUTH_CREATE_USERS = False

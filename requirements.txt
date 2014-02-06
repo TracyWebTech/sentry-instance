@@ -1,3 +1,4 @@
 sentry
 psycopg2
 gevent
+python-memcached

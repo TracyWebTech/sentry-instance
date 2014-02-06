@@ -1,4 +1,5 @@
 
+include memcached
 include supervisor
 
 supervisor::app { 'sentry':
