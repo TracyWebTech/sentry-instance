@@ -50,9 +50,8 @@ def provision():
 
 
 def upgrade_sentry():
-    with prefix(WORKON_ENV):
-        config_file = '/home/{}/sentry-config.py'.format(APP_USER)
-        run('sentry --config={} upgrade'.format(config_file))
+    with prefix(WORKON_ENV), cd(REPO_PATH):
+        run('sentry --config=sentry_config.py upgrade')
 
 
 def mkvirtualenv():

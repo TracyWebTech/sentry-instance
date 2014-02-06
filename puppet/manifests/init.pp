@@ -2,8 +2,8 @@
 include supervisor
 
 supervisor::app { 'sentry':
-  command   => '/home/sentry/.virtualenvs/sentry/bin/sentry --config=sentry-config.py start --noupgrade',
-  directory => '/home/sentry/',
+  command   => '/home/sentry/.virtualenvs/sentry/bin/sentry --config=sentry_config.py start --noupgrade',
+  directory => '/home/sentry/sentry/',
   user      => 'sentry',
 }
 
