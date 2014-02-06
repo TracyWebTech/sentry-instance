@@ -1,7 +1,7 @@
 
 include supervisor
 
-supervisor::app { '':
+supervisor::app { 'sentry':
   command   => '.virtualenvs/sentry/bin/sentry --config=sentry-config.py start',
   directory => '/home/sentry/',
   user      => 'sentry',
