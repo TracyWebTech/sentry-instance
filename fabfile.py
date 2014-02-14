@@ -58,7 +58,7 @@ def provision():
 
 
 def upgrade_sentry():
-    with prefix(WORKON_ENV), prefix('source /etc/profile.d/django_sentry.sh'):
+    with prefix(WORKON_ENV):
         with cd(REPO_PATH):
             run('sentry --config=sentry_config.py upgrade')
 
