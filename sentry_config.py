@@ -22,7 +22,7 @@ SENTRY_KEY = os.environ.get('SENTRY_KEY')
 SENTRY_URL_PREFIX = 'https://sentry.tracy.com.br'
 
 SENTRY_WEB_HOST = '0.0.0.0'
-SENTRY_WEB_PORT = 8000
+SENTRY_WEB_PORT = 80
 
 SENTRY_WEB_OPTIONS = {
     'workers': 3,  # the number of gunicorn workers
