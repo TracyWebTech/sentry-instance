@@ -1,4 +1,3 @@
-jfryman-nginx 0.0.7
 saz-memcached 2.4.0
 tracywebtech-supervisor 1.1.0
 tracywebtech-pip 1.0.0
