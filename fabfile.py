@@ -41,12 +41,6 @@ def bootstrap():
     if not exists('/usr/bin/git'):
         aptget_install('git')
 
-    if not exists('/usr/sbin/ufw'):
-        aptget_install('ufw')
-
-    run('ufw allow 22/tcp')
-    run('ufw allow from 177.71.249.31')
-
 
 def aptget_install(pkg):
     sudo('DEBIAN_FRONTEND=noninteractive apt-get install -y -q {}'.format(pkg))
