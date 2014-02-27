@@ -47,8 +47,14 @@ def aptget_install(pkg):
 
 
 def provision():
-    sudo('puppet apply --modulepath={0}modules/ {0}manifests/init.pp'.format(
-         REPO_PATH + '/puppet/'))
+    puppet_path = os.path.join(REPO_PATH, 'puppet/')
+    puppet_modules = '{}:/etc/puppet/modules'.format(puppet_path + 'modules')
+
+    with cd(puppet_path):
+        run('sudo ./bootstrap.sh')
+
+    sudo('puppet apply --modulepath={} {}manifests/init.pp'.format(
+         puppet_modules, puppet_path))
 
 
 def upgrade_sentry():
