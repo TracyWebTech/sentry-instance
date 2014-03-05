@@ -27,6 +27,7 @@ SENTRY_WEB_PORT = 443
 SENTRY_WEB_OPTIONS = {
     'workers': 3,  # the number of gunicorn workers
     'worker_class': 'gevent',
+    'max_requests': 1000, # number of reqs before worker restart
     'secure_scheme_headers': {'X-FORWARDED-PROTO': 'https'},
     'certfile': 'ssl/sentry.crt',
     'keyfile': 'ssl/sentry.key',
