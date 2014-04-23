@@ -25,5 +25,5 @@ package { 'build-essential':
 supervisor::app { 'sentry':
   command   => '/home/sentry/.virtualenvs/sentry/bin/sentry --config=sentry_config.py start --noupgrade',
   directory => '/home/sentry/sentry/',
-  user      => 'sentry',
+  user      => 'root',
 }
