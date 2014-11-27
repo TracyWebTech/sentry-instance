@@ -3,3 +3,4 @@ psycopg2
 gevent
 python-memcached
 sentry-github
+sentry-gitlab
