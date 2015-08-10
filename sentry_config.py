@@ -64,3 +64,14 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
 ALLOWED_HOSTS = ('sentry.tracy.com.br', )
+
+SENTRY_REDIS_OPTIONS = {
+    'hosts': {
+        0: {
+            'host': '127.0.0.1',
+            'port': 6379,
+            'timeout': 3,
+            #'password': 'redis auth password'
+        }
+    }
+}
